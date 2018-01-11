@@ -1,0 +1,2 @@
+# angularGulp
+gulp下使用webpack插件的angualr模板
