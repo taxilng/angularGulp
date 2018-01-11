@@ -1,0 +1,37 @@
+<cfo-panel panel-options="vm.formPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+        <form class="form-horizontal" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.model" name="vm.cdForm"></form>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center mt-14">
+                <button class="btn  btn-blue btn-reset btn-margin-r" ng-click="vm.searchInfo()">查询</button>
+                <button class="btn btn-clear btn-reset btn-margin-l" ng-click="vm.clear()">重置</button>
+                <button class="btn btn-default btn-sm" ng-click="vm.advanceFinancialSearch(vm.financialSearchText.key)" ng-if="vm.prodType === 'financial'" ng-bind="vm.financialSearchText.text"></button>
+            </div>
+        </div>
+    </panel-body>
+</cfo-panel>
+<!--查询面板-->
+<cfo-panel panel-options="vm.gridPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+        <div class="btn-group">
+            <button class="btn btn-sm btn-blue btn-reset" ng-click="vm.addPaymode();">添加
+            </button>
+        </div>
+        <div class="custom-table" loading="vm.gridOptions.data">
+            <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+        </div>
+        <cfo-pagination page="vm.page.startIndex" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.doCtrlPagingAct(page, pageSize, total)"></cfo-pagination>
+    </panel-body>
+</cfo-panel>

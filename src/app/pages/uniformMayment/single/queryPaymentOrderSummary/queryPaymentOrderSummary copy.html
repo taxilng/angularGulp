@@ -1,0 +1,67 @@
+<!--查询面板-->
+<cfo-panel panel-options="vm.formPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+        <div class="col-md-12 form-inline">
+                <div class="col-md-3 col-md-offset-1">
+                    <div class="radio">
+                      <label>
+                        订单状态
+                      </label>
+                    </div>
+                </div>
+                <div class="col-md-8 label-height">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1"> 订单已创建
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox2" value="option2"> 订单已收妥
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox3" value="option3"> 订单未收妥
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox4" value="option4"> 订单未付款完成
+                    </label>
+                     <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox4" value="option4"> 订单完成
+                    </label>
+                     <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox4" value="option4"> 付款撤销未完成
+                    </label>
+                     <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox4" value="option4"> 收款撤销未完成
+                    </label>
+                     <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox4" value="option4"> 订单预授权中
+                    </label>
+                     <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox4" value="option4"> 订单已取消
+                    </label>
+                </div>
+            </div>
+        <form class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></form>
+    </panel-body>
+</cfo-panel>
+<!--返回结果-->
+<cfo-panel panel-options="vm.gridPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+        <div class="row" loading="vm.gridOptions.data">
+            <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+        </div>
+        <!--分页-->
+        <cfo-pagination page="vm.page.startIndex" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.doCtrlPagingAct(page, pageSize, total)">
+        </cfo-pagination>
+    </panel-body>
+</cfo-panel>

@@ -1,0 +1,31 @@
+tree
+
+options = {
+    collapse: true | false,
+    rightClick: true | false,
+    rightClickEvents: [
+        'name': {
+            eventOptions
+        }
+    ],
+    dragable: true | false,
+    dragRules: function() {
+
+    },
+    maxDepth: 0 | number,       // 0 - no limit
+    checkboxShow: true | false
+};
+
+service = {
+    collapseAll();      // 闭合所有
+    expandAll();        // 打开所有
+    collapse();         // 闭合指定
+    expand();           // 打开指定
+    getCurrentNode();   // 获得当前节点或节点集
+    setCurrentNode();   // 设置选中节点或节点集
+    convertData();      // 数据转化方法
+    reconvertData();    // 数据逆转化方法
+    addNode();          // 脱离业务逻辑的节点增加
+    modifyNode();       // 脱离业务逻辑的节点信息修改
+    deleteNode();       // 脱离业务逻辑的节点删除
+}

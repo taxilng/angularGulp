@@ -1,0 +1,117 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-stylus/bootstrap/variables.styl
+ */
+$navbar-inverse-link-color = #5AADBB
+$icon-font-path = "../../bower_components/bootstrap-stylus/fonts/"
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  stylus dependencies when defined in the bower.json of your dependencies
+ */
+// bower:styl
+// endbower
+@import './styles/variables.styl';
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your stylus files automatically
+ */
+// injector
+// endinjector
+
+@font-face
+    font-family "iconfont"
+    src  url('/assets/icon-font/iconfont.eot'); /* IE9*/
+    src  url('/assets/icon-font/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/assets/icon-font/iconfont.woff') format('woff'), /* chrome, firefox */
+         url('/assets/icon-font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+         url('/assets/icon-font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+
+.iconfont
+    font-family "iconfont" !important
+    font-size 16px
+    font-style normal
+    -webkit-font-smoothing antialiased
+    -webkit-text-stroke-width 0.2px
+    -moz-osx-font-smoothing grayscale
+
+.icon-menu:before
+    content: "\e6ff";
+
+.icon-username:before
+    content: "\e617";
+
+.icon-nextPage:before
+    content: "\e606";
+
+.icon-nextPage2:before
+    content: "\e64b";
+
+.icon-wallet:before
+    content: "\e63b";
+
+.icon-prodmanager:before
+    content: "\e603";
+
+.icon-myfortune:before
+    content: "\e6c1";
+
+.icon-logout:before
+    content: "\e649";
+
+.icon-security:before
+    content: "\e605";
+
+.icon-bank:before
+    content: "\e6b7";
+
+.icon-calendar:before
+    content: "\e682";
+
+.icon-arrow-right:before
+    content: "\e615";
+.icon-arrow-down:before
+    content: "\e600";
+.icon-batch:before
+    content:"\e6ed"
+.icon-minus
+    color $color-blue-primary
+    &:before
+        content:'\e613'
+.icon-menupanel
+    font-size 20px
+    margin-right 6px
+    color $color-green-btn
+    &:before
+        content:'\e604'
+.icon-plus
+    color $color-blue-primary
+    &:before
+        content:'\e630'
+.icon-authority:before
+    content:'\e622'
+.icon-payment:before
+    content:'\e6a5'
+.icon-customer:before
+    content:'\e626'
+.icon-financeProxy:before
+    content:'\e692'
+.icon-unchecked:before
+    content:'\e655'
+.icon-checked:before
+    content:'\e609'
+.icon-search
+    color $color-orange-btn
+    font-size 18px
+    margin-right 6px
+    &:before
+        content:"\e60b"
+.icon-content
+    color $color-blue-primary
+    font-size 18px
+    margin-right 6px
+    &:before
+        content:"\e653";
+        
+
+

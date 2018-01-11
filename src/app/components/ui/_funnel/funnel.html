@@ -1,0 +1,16 @@
+<div class="funnel-chart">
+    <div class="chart-item" ng-repeat="data in options.data">
+        <div class="chart-item-bar col-lg-5 col-md-5 col-sm-5">
+            <div class="item-bar-sub" style="width:{{value.percent}}" ng-repeat="value in data.value"
+                ng-click="click(value)">
+                <span ng-bind="value.value"></span>
+            </div>
+        </div>
+        <div class="chart-item-descript col-lg-6 col-md-6 col-sm-6">
+            <label ng-repeat="value in data.value">
+                <span ng-bind="value.name"></span>
+                <span ng-if="!$last" ng-bind="'、 '"></span>
+            </label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="menuInfoDetail">
+    <div class="row detail-form">
+        <cfo-panel panel-options="">
+            <panel-body>
+                <form class="form-horizontal mlr-8" sf-schema="vm.detailSchema" sf-form="vm.detailForm" sf-model="vm.detailModel"></form>
+                <div class="form-group">
+                    <div class="row-desc col-lg-12 col-md-12 col-sm-12">
+                        <div class="text-right desc-title">
+                            <label>菜单描述</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10  desc-content">
+                            <p ng-bind="vm.detailModel.menuDesc"></p>
+                        </div>
+                    </div>
+                </div>
+            </panel-body>
+        </cfo-panel>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+                <button class="btn btn-default btn-sm btn-reset" ng-click="vm.cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

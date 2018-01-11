@@ -1,0 +1,29 @@
+<div class="investPlanConfigDetailModal">
+	<div class="row detail-form">
+        <cfo-panel panel-options="">
+            <panel-body>
+                <table class="table table-bordered">
+                	<tr >
+            			<td>方案编号</td>
+            			<td>产品类别</td>
+            			<td>产品名称</td>
+            			<td>产品占比</td>
+            			<td>产品编号</td>
+            		</tr>
+            		<tr ng-repeat="item in vm.prodConfigList">
+            			<td rowspan="4" ng-if="$first">{{vm.planId}}</td>
+            			<td>{{item.prodType | titleMapFilter: vm.prodTypeMap}}</td>
+            			<td>{{item.prodName}}</td>
+            			<td>{{item.prodProp}}</td>
+            			<td>{{item.productId}}</td>
+            		</tr>
+                	</tbody>
+                </table>
+                <div class="text-center">
+                    <button class="btn btn-blue" ng-click="vm.updateProdPlan()">更新产品信息</button>
+                </div>
+                
+            </panel-body>
+        </cfo-panel>
+    </div>
+</div>

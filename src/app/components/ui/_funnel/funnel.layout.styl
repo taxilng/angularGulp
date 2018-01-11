@@ -1,0 +1,24 @@
+.funnel-chart
+    .chart-item
+        height: 35px;
+        line-height: 35px;
+        margin: 5px;
+        margin-bottom:10px;
+        
+        .chart-item-bar
+            display: inline-block;
+            text-align: center;
+            .item-bar-sub
+                border: solid 1px;
+                display: inline-block;
+                &:first-child:not(:last-child)
+                    border-radius: 20px 0 0 20px;
+                    margin-right: -1px;
+                &:last-child:not(:first-child)
+                    border-radius: 0 20px 20px 0;
+                    margin-left: -1px;
+                &:first-child:last-child
+                    border-radius: 20px;
+        .chart-item-descript
+            display: inline-block;
+            padding-left: 10px;

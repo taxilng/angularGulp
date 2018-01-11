@@ -1,0 +1,14 @@
+<!--查询面板-->
+<cfo-panel panel-options="vm.formPanelOptions">
+     <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+    	<form class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></form>
+    </panel-body>
+</cfo-panel>
+
+

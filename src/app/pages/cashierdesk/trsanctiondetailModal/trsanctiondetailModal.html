@@ -1,0 +1,41 @@
+<div class="trsanctiondetailModal">
+    <uib-tabset active="active">
+        <uib-tab index="$index+1" ng-repeat="tab in vm.tabs" heading="{{tab.title}}" disable="tab.disabled" select="vm.selectFun($index);">
+            <div class="row detail-form" ng-if="$index===0">
+                <cfo-panel panel-options="">
+                    <panel-title></panel-title>
+                    <panel-body>
+                        <form class="form-horizontal mlr-8" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.formModal"></form>
+                        <div class="form-group">
+                        <div class="detailform-blank"></div>
+                    <div class="row-desc col-lg-12 col-md-12 col-sm-12">
+                        <div class="text-right desc-title">
+                            <label>描述</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10  desc-content">
+                            <p ng-bind="vm.formModal.discription"></p>
+                        </div>
+                    </div>
+                    </div>
+                    </panel-body>
+                </cfo-panel>
+            </div>
+            <div id="grid2" class="row detail-form" ng-if="$index===1">
+                <cfo-panel panel-options="">
+                    <panel-title></panel-title>
+                    <panel-body>
+                        <div class="grid" ui-grid="vm.paygridOptions" ui-grid-selection></div>
+                    </panel-body>
+                </cfo-panel>
+            </div>
+            <div id="grid3" class="row detail-form" ng-if="$index===2">
+                <cfo-panel panel-options="">
+                    <panel-title></panel-title>
+                    <panel-body>
+                          <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+                    </panel-body>
+                </cfo-panel>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

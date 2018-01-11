@@ -1,0 +1,34 @@
+<div class="fundProductManage">
+<cfo-panel panel-options="vm.formPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+<!--     <div id="divInput"> -->
+	<form class="form-horizontal" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.model"></form>
+    <!-- </div> -->
+</panel-body>
+</cfo-panel>
+<cfo-panel panel-options="vm.gridPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+            <div class="btn-group">
+                <button class="btn btn-sm btn-blue btn-reset" ng-click="vm.addmode();">添加
+                </button>
+            </div>
+
+            <div class="custom-table" loading="vm.gridOptions.data">
+            <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection ></div>
+            </div>
+            <cfo-pagination page="vm.page.startIndex" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.doCtrlPagingAct(page, pageSize, total)"></cfo-pagination>
+    </panel-body>
+    </cfo-panel>
+</div>

@@ -1,0 +1,16 @@
+<div class="tabs" >
+    <div class="cfo-tab" >
+
+        <div class="cfo-tab-item unselected"
+             ng-class="{'selected':tabitem.active}"
+             ng-click='tabitem.click();tabWrap.select(tabitem)' ng-repeat="tabitem in tabWrap.tabitems"
+             ng-style='{zIndex:tabWrap.tabitems.length-1-$index}'
+             >
+            {{tabitem.value}}
+        </div>
+    </div>
+    <div class="cfo-tab-body">
+        <div  ng-transclude></div>
+    </div>
+
+</div>

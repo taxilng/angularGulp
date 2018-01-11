@@ -1,0 +1,8 @@
+<div ng-repeat="item in options" class="cfo-button {{item.className}} " ng-class="{'btn-powder-shadow-active':item.isActive}" ng-click="item.events.click()">
+    <div class="cfo-button-box">
+        <span class="fa fa-{{item.icon}} cfo-icon-{{item.iconAlign}}" ng-src="" ng-class="{'cfo-button-no-icon':icon==''}"></span>
+        <span class="cfo-button-text" ng-class="{'cfo-button-no-text':text==''}">
+            {{item.text}}
+        </span>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<script type="text/ng-template" id="nodes_renderer.html">
+    <div ui-tree-handle class="tree-node tree-node-content" ng-class="{'selected': node.isSelected}" ng-mouseover="vm.onNodes(this)">
+        <a class="btn btn-xs" ng-if="node.hasLeaf == 1" data-nodrag ng-click="vm.toggle(collapsed);">
+            <i class="iconfont" ng-class="{'icon-plus': collapsed, 'icon-minus': !collapsed}"></i>
+        </a>
+        <input ng-if="options.checkboxShow === true" ng-checked="node.checked" ng-click="vm.saveNodes(this, options.treeName)" type="checkbox"/>
+        <span ng-bind="node.title" ng-click="vm.select(this)"></span>
+        <a ng-if="options.titleClick === true" class="title-event">
+            <span ng-repeat="event in options.titleClickEvents" ng-click="event.clickFunc()" ng-bind="event.name"></span>
+        </a>
+    </div>
+    <ol ui-tree-nodes="" ng-model="node.nodes" class="tree" ng-class="{hidden: collapsed}">
+        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'" data-collapsed="{{options.collapse}}"></li>
+    </ol>
+</script>
+
+<div class="cfo-tree">
+    <div class="cfo-tree-panel" data-target="menu-{{$index}}" context-menu="onShow(this)" context-menu-close="onClose(this)">
+        <div data-ui-tree="options.events" id="tree-root" data-max-depth="{{options.maxDepth}}" data-drag-delay="500" data-drag-enabled="{{options.dragable}}">
+            <ol ui-tree-nodes ng-model="options.data">
+                <li ng-repeat="node in options.data" ng-class="{'selected':node.isSelected}" ui-tree-node ng-include="'nodes_renderer.html'" data-collapsed="{{options.collapse}}"></li>
+            </ol>
+        </div>
+    </div>
+    <div class="dropdown position-fixed" id="menu-{{$index}}" ng-if="options.rightClick === true">
+        <ul class="dropdown-menu" role="menu">
+            <li ng-if="options.rightClickEvents" ng-repeat="event in options.rightClickEvents">
+                <a class="pointer" role="menuitem" tabindex="{{$index}}" ng-click="event.clickFunc(vm.selectedNode.$modelValue)">{{event.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

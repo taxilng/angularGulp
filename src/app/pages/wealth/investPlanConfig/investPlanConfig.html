@@ -1,0 +1,65 @@
+<div class="investPlanConfig">
+	<cfo-panel panel-options="vm.formPanelOptions">
+	    <panel-title>
+	    </panel-title>
+	    <panel-body>
+	        <form class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></form>
+	    </panel-body>
+	</cfo-panel>
+	<cfo-panel panel-options="vm.gridPanelOptions">
+	    <panel-title>
+	    </panel-title>
+	    <panel-body>
+<!-- 	    	<table class="table">
+                	<thead>
+                		<tr >
+                			<th rolspan="4">方案编号</th>
+                			<th>产品类别</th>
+                			<th>产品配置编号</th>
+                			<th>产品名称</th>
+                			<th>产品编号</th>
+                			<th>产品占比</th>
+                		</tr>
+                	</thead>
+                	<tbody>
+                		<tr>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                		</tr>
+                		<tr>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                		</tr>
+                		<tr>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                		</tr>
+                		<tr>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                			<td>产品占比</td>
+                		</tr>
+
+                	</tbody>
+                </table> -->
+	        <div class="custom-table" loading="vm.gridOptions.data">
+	            <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+	        </div>
+	        <!-- <cfo-pagination page="vm.page.startIndex" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.doCtrlPagingAct(page, pageSize, total)"></cfo-pagination> -->
+	    </panel-body>
+	</cfo-panel>
+
+</div>
+
+

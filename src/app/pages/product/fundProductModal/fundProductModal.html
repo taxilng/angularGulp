@@ -1,0 +1,53 @@
+<div class="fundProductModal">
+<form name="ngForm">
+    <div ng-show="vm.productPage ? true :false">
+        <cfo-panel panel-options="vm.formPanelOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <div class="form-horizontal" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.model"></div>
+            </panel-body>
+        </cfo-panel>
+        <div class="row form-group text-center">
+            <a role="button" class="btn btn-blue btn-step" ng-click="vm.toPage2(ngForm)">
+                <span>下一步</span>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+</form>
+
+<div id="ratePage2" ng-if="ratePage">
+<form name="rateForm">
+        <cfo-panel panel-options="vm.schemaPanelOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <div id="fundRateForm" class="row">
+                    <div class="form-horizontal" sf-schema="vm.rateSchema" sf-form="vm.rateForm" sf-model="vm.currentRate"></div>
+                </div>
+            </panel-body>
+        </cfo-panel>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+                <button class="btn btn-confirm btn-sm look-for btn-margin-r" ng-click="vm.addtorateDetailList(rateForm)">确定</button>
+                <button class="btn btn-default btn-sm hidden-xs" ng-click="vm.clearRate()">重置</button>
+            </div>
+        </div>
+<!--         <cfo-panel panel-options="vm.rateInfoOptions">
+            <panel-title></panel-title>
+            <panel-body> -->
+            <!-- ng-if="vm.gridOptions.data && vm.gridOptions.data.length>0" -->
+                <!-- <div  loading="vm.gridOptions.data"> -->
+                    <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+                <!-- </div> -->
+<!--             </panel-body>
+        </cfo-panel> -->
+        <div class="row form-group text-center">
+            <a role="button" class="btn btn-blue btn-step" ng-click="vm.toPage1()">
+                <i class="fa fa-angle-left pull-left"></i>
+                <span>上一步</span>
+            </a>
+            <a href="javascript:;" class="btn btn-blue btn-step" ng-click="vm.autoReceiveSure({})">确定</a>
+        </div>
+    </div>
+    </form>
+</div>

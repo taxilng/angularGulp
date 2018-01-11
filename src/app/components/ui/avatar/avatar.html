@@ -1,0 +1,32 @@
+<div class="avatar">
+    <div class="pull-left icon">
+        <img src="images/avatar.png" alt="" />
+    </div>
+    <!-- <div class="pull-left">
+        <div class="name">
+            {{userName}}
+        </div>
+        <div class="name">
+            {{roleName}}
+        </div>
+
+    </div> -->
+
+    <div class="input-group-btn" uib-dropdown is-open="isopen">
+        <button type="btn dropdown-toggle" class="btn btn-default" uib-dropdown-toggle>
+            <span>{{userName}}</span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+            <!-- <li role="menuitem" ng-click='chooseType(item,$event)' ng-repeat='item in searchTypeList'>
+                <a href="#">{{item.title}}</a>
+            </li> -->
+            <li role="menuitem" ng-click="">
+            <a><i class="fa fa-cog"></i>账户设置</a>
+            </li>
+            <li class="divider"></li>
+            <li role="menuitem" ng-click="">
+            <a><i class="fa fa-sign-out"></i>登出</a>
+            </li>
+        </ul>
+    </div>
+</div>

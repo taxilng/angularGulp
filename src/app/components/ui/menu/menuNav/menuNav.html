@@ -1,0 +1,34 @@
+<ul class="menu-nav" ng-click="disContentMenu()">
+    <li class="menu-list" ng-mouseleave="disContentMenu()" ng-repeat="item in menu" ng-mouseover="selectMenu($index, menu.length)">
+      {{item.title}}
+      <div class="paper-ripple" ng-click="circle($event, item.title, item.state)">
+          <div class="paper-ripple-circle" ng-style="myStyle" ng-class="{'menu-bubble-animation': menuBubble&&menuName==item.title}"></div>
+      </div>
+      <ul class="display-menu-content" ng-mouseleave="resetDisplay()" ng-class="{'displaying':displayMenu[$index]}" ng-if="displayMenu[$index]">
+          <li class="display-menu-list" ng-repeat="nextItem in item.items" ng-mouseover="selectNextMenu($event, $index, item.items.length)">
+              {{nextItem.title}}
+              <div class="paper-ripple" ng-click="circle($event, nextItem.title, nextItem.state)">
+                  <div class="paper-ripple-circle" ng-style="myStyle" ng-class="{'menu-bubble-animation': menuBubble&&menuName==nextItem.title}"></div>
+              </div>
+              <i class="fa fa-caret-right pull-right" aria-hidden="true" ng-if="nextItem.items.length>0"></i>
+              <ul class="right-menu-content" ng-mouseleave="resetDisplay()" ng-if="nextItem.items.length>0 && $index == displayIndex && $parent.$parent.$index == parentIndex && rightNow">
+                  <li class="right-menu-list" ng-repeat="nextItem in nextItem.items" ng-mouseover="selectLastMenu($event, $index, nextItem.items.length)">
+                      {{nextItem.title}}
+                      <div class="paper-ripple" ng-click="circle($event, nextItem.title, nextItem.state)">
+                          <div class="paper-ripple-circle" ng-style="myStyle" ng-class="{'menu-bubble-animation': menuBubble&&menuName==nextItem.title}"></div>
+                      </div>
+                      <i class="fa fa-caret-right pull-right" aria-hidden="true" ng-if="nextItem.items.length>0"></i>
+                      <ul class="right-menu-content displayings" ng-if="nextItem.items.length>0 && finalIndex == $index && lastNow">
+                          <li class="right-menu-list" ng-repeat="nextItem in nextItem.items">
+                              {{nextItem.title}}
+                              <div class="paper-ripple" ng-click="circle($event, nextItem.title, nextItem.state)">
+                                  <div class="paper-ripple-circle" ng-style="myStyle" ng-class="{'menu-bubble-animation': menuBubble&&menuName==nextItem.title}"></div>
+                              </div>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </li>
+</ul>

@@ -1,0 +1,146 @@
+'use strict';
+
+var FINANCING_PRODUCT_QUERY = {
+    reply:{
+    resBody:{
+    totalCount:6,
+    FinancingProductList: [{
+        'productId':'Prod201611091781',
+        'productName':'润和金融1号',
+        'paymentMethod':'01',
+        'interestStartDate':'2016-12-21',
+        'price':'7%',
+        'productTerm':'180',
+        'startAmount':'100',
+        'availableAmount':'2000',
+        'status':'ON_SALE',
+        'risklevel':'中',
+        'purchaseDate':'Fri Nov 25 2016 08:00:00 GMT+0800 (ä¸­å½æ åæ¶é´)',
+        'interestEndDate':'Fri Nov 25 2016 08:00:00 GMT+0800 (ä¸­å½æ åæ¶é´)',
+        'receiptDate':'2017-01-01',
+        'productAmount':'1000',
+        'fundManagementCompany':'XX公司',
+        'fundCustodianInstitutions':'wuwuwu'
+
+    },{
+        'productId':'Prod201611091782',
+        'productName':'润和金融2号',
+        'paymentMethod':'02',
+        'interestStartDate':'2016-12-21',
+        'price':'7%',
+        'productTerm':'180',
+        'startAmount':'100',
+        'availableAmount':'2000',
+        'status':'ON_SALE',
+        'risklevel':'中',
+        'purchaseDate':'2016-11-09',
+        'interestEndDate':'2017-01-08',
+        'receiptDate':'2017-01-01',
+        'productAmount':'1000',
+        'fundManagementCompany':'XX公司',
+        'fundCustodianInstitutions':'wuwuwu'
+    },{
+        'productId':'Prod201611091783',
+        'productName':'润和金融3号',
+        'paymentMethod':'01',
+        'interestStartDate':'2016-12-21',
+        'price':'7%',
+        'productTerm':'180',
+        'startAmount':'100',
+        'availableAmount':'2000',
+        'status':'ON_SALE',
+        'risklevel':'中',
+        'purchaseDate':'2016-11-09',
+        'interestEndDate':'2017-01-08',
+        'receiptDate':'2017-01-01',
+        'productAmount':'1000',
+        'fundManagementCompany':'XX公司',
+        'fundCustodianInstitutions':'wuwuwu'
+    },{
+        'productId':'Prod201611091784',
+        'productName':'润和金融4号',
+        'paymentMethod':'02',
+        'interestStartDate':'2016-12-21',
+        'price':'7%',
+        'productTerm':'180',
+        'startAmount':'100',
+        'availableAmount':'1500',
+        'status':'ON_SALE',
+        'risklevel':'中',
+        'purchaseDate':'2016-11-09',
+        'interestEndDate':'2017-01-08',
+        'receiptDate':'2017-01-01',
+        'productAmount':'1000',
+        'fundManagementCompany':'XX公司',
+        'fundCustodianInstitutions':'wuwuwu'
+    },{
+        'productId':'Prod201611091785',
+        'productName':'润和金融5号',
+        'paymentMethod':'01',
+        'interestStartDate':'2016-12-21',
+        'price':'7%',
+        'productTerm':'180',
+        'startAmount':'100',
+        'availableAmount':'2000',
+        'status':'OFF_SALE',
+        'risklevel':'中',
+        'purchaseDate':'2016-11-09',
+        'interestEndDate':'2017-01-08',
+        'receiptDate':'2017-01-01',
+        'productAmount':'1000',
+        'fundManagementCompany':'XX公司',
+        'fundCustodianInstitutions':'wuwuwu'
+    },{
+        'productId':'Prod201611091786',
+        'productName':'润和金融6号',
+        'paymentMethod':'01',
+        'interestStartDate':'2016-12-21',
+        'price':'7%',
+        'productTerm':'180',
+        'startAmount':'100',
+        'availableAmount':'2000',
+        'status':'ON_SALE',
+        'risklevel':'中',
+        'purchaseDate':'2016-11-09',
+        'interestEndDate':'2017-01-08',
+        'receiptDate':'2017-01-01',
+        'productAmount':'1000',
+        'fundManagementCompany':'XX公司',
+        'fundCustodianInstitutions':'wuwuwu'
+    }]
+}
+}
+};
+
+var FINANCING_PRODUCT_QUERY_DETAIL ={
+    reply:{
+    resBody:{
+        'FinancingDetail':{
+            'productId':'Prod201611091786',
+            'productName':'润和金融6号',
+            'paymentMethod':'01',
+            'interestStartDate':'2016-12-21',
+            'price':'7%',
+            'productTerm':'180',
+            'startAmount':'100',
+            'availableAmount':'2000',
+            'status':'ON_SALE',
+            'risklevel':'中',
+            'purchaseDate':'2016-11-09',
+            'interestEndDate':'2017-01-08',
+            'receiptDate':'2017-01-01',
+            'productAmount':'1000',
+            'fundManagementCompany':'XX公司',
+            'fundCustodianInstitutions':'wuwuwu'
+        }
+        }
+    }
+};
+
+var FINANCING_PRODUCT_SAVE = {
+    reply:{
+        resBody:{
+            
+        }
+    }
+};

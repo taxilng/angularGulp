@@ -1,0 +1,25 @@
+<div class="paymentchannelModal">
+
+    <form name="ngForm">
+        <cfo-panel panel-options="vm.panelBanseInfoOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <div class="form-horizontal" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.model"></div>
+            </panel-body>
+        </cfo-panel>
+        <cfo-panel panel-options="vm.panelBankInfoOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <div class="custom-table" loading="vm.gridOptions.data">
+                    <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+                </div>
+            </panel-body>
+        </cfo-panel>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+                <button class="btn btn-blue btn-sm btn-margin-r" ng-click="vm.autoReceiveSure(ngForm)">确定</button>
+                <button class="btn btn-default btn-sm hidden-xs" ng-click="vm.dismissModal()">取消</button>
+            </div>
+        </div>
+    </form>
+</div>

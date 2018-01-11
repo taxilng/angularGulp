@@ -1,0 +1,134 @@
+<div class="supplierModal">
+    <form name="ngForm" class="form-horizontal" novalidate>
+        <cfo-panel panel-options="vm.panelBanseInfoOptions">
+            <panel-title>
+            </panel-title>
+            <panel-body>
+                <!-- <div  class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></div> -->
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">供应商名称</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.supplyName" required maxlength="20" ng-blur="vm.deleteSpecial($event,'supplyName');">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">公司地址</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.address" required  ng-blur="vm.deleteSpecial($event,'address');">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">法人代表</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.legalPersonName" required ng-blur="vm.deleteSpecial($event,'legalPersonName');">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">公司网址</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.website" required>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">联系方式</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.contactNo" required maxlength="12">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">公司规模</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.supplyScale" required ng-blur="vm.deleteSpecial($event,'supplyScale');">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">工商行政代码</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.unifiedSocialCreditCode" required maxlength="18">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">公司行业</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" ui-select2="$root.select2Options" ng-model="vm.model.supplyType" ng-options="item.value as item.name for item in vm.supplyTypeMap" ng-change="vm.changeSupplyType(vm.model.supplyType)" required></select>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">成立日期</label>
+                    <div class="col-sm-7">
+                        <p class="input-group">
+                            <input type="text" class="form-control picker-control" uib-datepicker-popup="{{format}}" current-text="今天" clear-text="清除" close-text="关闭" ng-model="vm.model.supplyFoundTime" is-open="vm.supplyFoundTime.open" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" readonly="readonly" required />
+                            <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-inner" ng-click="vm.supplyFoundTimeOpen()"><i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">机构代码</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.institutionCode" required maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">合作状态</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" ui-select2="$root.select2Options" ng-model="vm.model.cooperationStatus" ng-options="item.value as item.name for item in vm.cooperationStatusMap" required ng-change="vm.changeCorperRequire();"></select>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">结算账号</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control"  ng-model="vm.model.cardNo" required maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">合作日期</label>
+                    <div class="col-sm-7">
+                        <p class="input-group">
+                            <input type="text" class="form-control picker-control" uib-datepicker-popup="{{format}}" current-text="今天" clear-text="清除" close-text="关闭" ng-model="vm.model.cooperationTime" is-open="vm.cooperationTime.open" datepicker-options="dateOptions" ng-required="{{vm.isCorperTimeRequire}}" close-text="Close" alt-input-formats="altInputFormats" readonly="readonly"  />
+                            <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-inner" ng-click="vm.cooperationTimeOpen()"><i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">账号开户行</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" placeholder="请输入正确的银行名称" ng-model="vm.model.depositBank" uib-typeahead="bank.partyName for bank in vm.bankList | filter:{partyName:$viewValue} | limitTo:8" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 form-group vertical-center" align="right" `>
+                        <label class="control-label col-md-2 col-lg-2 label-line-height">图片预览</label>
+                        <div class="col-md-1">
+                            <img ng-src="{{vm.model.upimageSrc}}" class="upload-preview" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 form-group vertical-center" align="right">
+                        <label class="control-label col-md-2 col-lg-2 label-line-height">供应商Logo</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" readonly="true" ng-model="vm.fileName" >
+                        </div>
+                        <div class="col-md-2">
+                            <div role="button" class="btn btn-default btn-sm btn-margin">
+                                <input id="uploadLogo" name="uploadImg" class="import-input" type="file" file-modal="myFile" ngf-select="vm.uploadCaseFile($files)" />上传
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </panel-body>
+        </cfo-panel>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+                <button class="btn btn-confirm btn-sm look-for btn-margin-r" ng-click="vm.supplierInfoRequest(ngForm)">确定</button>
+                <button class="btn btn-default btn-sm hidden-xs" ng-click="vm.dismissModal()">取消</button>
+            </div>
+        </div>
+    </form>
+</div>

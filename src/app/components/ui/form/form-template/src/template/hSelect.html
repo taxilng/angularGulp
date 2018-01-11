@@ -1,0 +1,17 @@
+<div ng-if="form.hidden!=true" class="form-group {{form.htmlClass}} schema-form-select" ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false}">
+    <label class="control-label {{form.labelHtmlClass}}" ng-show="showTitle()">{{form.title}}</label>
+    <div ng-if="!form.fieldButtonRight && !form.fieldButtonLeft" class="{{form.divClass}}">
+        <select ng-model="$$value$$" ui-select2="$root.select2Options" ng-model-options="form.ngModelOptions" ng-disabled="form.readonly"  sf-changed="form" class="form-control {{form.fieldHtmlClass}}" schema-validate="form" ng-options="item.value as item.name group by item.group for item in form.titleMap" name="{{form.key.slice(-1)[0]}}"></select>
+    </div>
+    <div ng-if="form.fieldButtonRight || form.fieldButtonLeft"
+        class="input-group {{form.divClass}}">
+        <div ng-if="form.fieldButtonLeft" class="input-group-btn">
+            <button type="button" class="btn {{form.buttonClass}}" ng-click="buttonClick($event, form)">{{form.buttonLabel}}</button>
+        </div>
+        <select ng-model="$$value$$" ui-select2="$root.select2Options" ng-model-options="form.ngModelOptions" ng-disabled="form.readonly" sf-changed="form" class="form-control {{form.fieldHtmlClass}}" schema-validate="form" ng-options="item.value as item.name group by item.group for item in form.titleMap" name="{{form.key.slice(-1)[0]}}"></select>
+        <div ng-if="form.fieldButtonRight" class="input-group-btn {{form.btnBlockClass}}">
+            <button type="button" class="btn {{form.buttonClass}}" ng-click="buttonClick($event, form)">{{form.buttonLabel}}</button>
+        </div>
+    </div>
+    <div class="help-block" sf-message="form.description"></div>
+</div>

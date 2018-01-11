@@ -1,0 +1,14 @@
+<div class="paging-panel">
+    <div class="page-pagination" ng-if='List.length>0' data-ng-hide="Hide">
+        <div class="size-control pull-left">
+            <span class='pull-left'>每页显示条数:</span>
+            <select ng-change='pagingAction({page:1,pageSize:pageSize,total:total})' class='form-control pull-left size-select' ng-options="item for item in sizeOptions" ng-model="pageSize"></select >
+        </div>
+        <ul data-ng-class="ulClass">
+            <li title="{{Item.title}}" data-ng-class="Item.liClass" data-ng-click="Item.action()" data-ng-repeat="Item in List">
+                <span data-ng-bind="Item.value"></span>
+            </li>
+        </ul>
+        <div class="totalCount">共<span class="totalCountSpan" ng-bind="total"></span>条记录</div>
+    </div>
+</div>

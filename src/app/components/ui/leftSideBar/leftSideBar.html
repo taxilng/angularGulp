@@ -1,0 +1,29 @@
+</div class="main-sidebar">
+<section class="sidebar">
+    <div class="menu-header">
+        菜单栏
+    </div>
+    <ul class="sidebar-menu">
+        <li class="treeview" ng-repeat="menuItem in vm.prodMenusListInfo" ng-if="menuItem.prodMenuLevel == 1" ng-class="{'active-item':menuItem.prodMenuCode===$root.selectMenu.prodMenuCode && menuItem.children.length===0}">
+            <a ng-click="vm.uiSrefFun(menuItem);">
+                <i class="iconfont" ng-class="menuItem.iconSrc"></i>
+                <span class="ml-10">{{menuItem.prodMenuName}}</span>
+                <span class="menu-arrow pull-right ">
+                  <i class="iconfont" ng-class="{'icon-arrow-down':menuItem.isOpen,'icon-arrow-right':!menuItem.isOpen}" ng-if="menuItem.children && menuItem.children.length>0"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li ng-repeat="nextMenuItem in menuItem.children" ng-if="nextMenuItem.prodMenuLevel == 2" ng-class="{'active-item':nextMenuItem.prodMenuCode===$root.selectMenu.prodMenuCode && nextMenuItem.children.length===0}">
+                    <a ng-click="vm.uiSrefFun(nextMenuItem);"><i class="fa fa-circle"></i>{{nextMenuItem.prodMenuName}}
+                    <span class="pull-right-container" ng-if="nextMenuItem.children && nextMenuItem.children.length>0">
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li ng-repeat="nextMenuItemTemp in nextMenuItem.children" ng-if="nextMenuItemTemp.prodMenuLevel == 3" ng-class="{'active-item':nextMenuItemTemp.prodMenuCode===$root.selectMenu.prodMenuCode && nextMenuItemTemp.children.length===0}"><a ng-click="vm.uiSrefFun(nextMenuItemTemp);"><i class="fa fa-circle-o"></i>{{nextMenuItemTemp.prodMenuName}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+</div>

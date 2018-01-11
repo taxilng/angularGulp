@@ -1,0 +1,142 @@
+'use strict';
+
+var FUND_PRODUCT_QUERY = {
+    reply:{
+    resBody:{
+    totalCount:6,
+    fundList: [{
+            'productId':'Prod201611091782',
+            'productName':'基金1号',
+            'externalProductCode':'201608098989',
+            'lastedNetWorth':'200',
+            'status':'ON_SALE',
+            'risklevel':'LOW',
+            'amonthGains':'2.3%',
+            'threeMonthsGains':'2.3%',
+            'ayearGains':'2.3%'
+    },{
+        'productId':'Prod201611091782',
+            'productName':'基金1号',
+            'externalProductCode':'201608098989',
+            'lastedNetWorth':'200',
+            'status':'ON_SALE',
+            'risklevel':'HIGH',
+            'amonthGains':'2.3%',
+            'threeMonthsGains':'2.3%',
+            'ayearGains':'2.3%'
+    },{
+        'productId':'Prod201611091782',
+            'productName':'基金1号',
+            'externalProductCode':'201608098989',
+            'lastedNetWorth':'200',
+            'status':'ON_SALE',
+            'risklevel':'LOW',
+            'amonthGains':'2.3%',
+            'threeMonthsGains':'2.3%',
+            'ayearGains':'2.3%'
+    },{
+        'productId':'Prod201611091782',
+            'productName':'基金1号',
+            'externalProductCode':'201608098989',
+            'lastedNetWorth':'200',
+            'status':'ON_SALE',
+            'risklevel':'LOW',
+            'amonthGains':'2.3%',
+            'threeMonthsGains':'2.3%',
+            'ayearGains':'2.3%'
+    },{
+        'productId':'Prod201611091782',
+            'productName':'基金1号',
+            'externalProductCode':'201608098989',
+            'lastedNetWorth':'200',
+            'status':'ON_SALE',
+            'risklevel':'LOW',
+            'amonthGains':'2.3%',
+            'threeMonthsGains':'2.3%',
+            'ayearGains':'2.3%'
+    },{
+        'productId':'Prod201611091782',
+            'productName':'基金1号',
+            'externalProductCode':'201608098989',
+            'lastedNetWorth':'200',
+            'status':'ON_SALE',
+            'risklevel':'HIGH',
+            'amonthGains':'2.3%',
+            'threeMonthsGains':'2.3%',
+            'ayearGains':'2.3%'
+    }]
+}
+}
+};
+
+var FUND_PRODUCT_QUERY_DETAIL ={
+    reply:{
+    resBody:{
+        'FundProductDetail':{
+        'productId':'prod2018097908',
+        'productName':'基金1号',
+        'externalProductCode':'jijing20160809',
+        'fundDescription':'前端收费基金',
+        'risklevel':'HIGH',
+        'lastedNetWorth':'10000',
+        'lastedNetWorthTime':'2017-09-08',
+        'dailyTrading':'2300',
+        'currentTime':'2017-09-08',
+        'productFoundDate':'2018-08-08',
+        'fundManagementCompany':'基金公司1号',
+        'fundCustodianInstitutions':'基金',
+        'dividendType':'分红到期',
+        'productAmount':'20000',
+        'chargeType':'返还',
+        'partyName':'江小刀',
+        'gender':'男',
+        'educationBackground':'本科',
+        'partyFromDate':'2016-07-08',
+        'jobContent':'在XX基金公司从业2年，在YY基金公司从业2年，在ZZ基金公司从业2年，在WW基金公司从业2年',
+        'rateDetailList':[{
+            'workLess':'1000',
+            'workMore':'3000',
+            'uomType':'YUAN',
+            'rateAmount':'1.5',
+            'amountUomId':'PERCENT',
+            'rateAmountOff':'1.2',
+            'rateTypeParentId':'PURCHASE'
+        },{
+            'workLess':'3000',
+            'workMore':'4500',
+            'uomType':'YUAN',
+            'rateAmount':'1.5',
+            'amountUomId':'PERCENT',
+            'rateAmountOff':'1.2',
+            'rateTypeParentId':'PURCHASE'
+        },{
+            'workLess':'4500',
+            'workMore':'5000',
+            'uomType':'YUAN',
+            'rateAmount':'1.5',
+            'amountUomId':'PERCENT',
+            'rateAmountOff':'1.2',
+            'rateTypeParentId':'PURCHASE'
+        },{
+            'workLess':'1000',
+            'workMore':'10000',
+            'uomType':'YUAN',
+            'rateAmount':'1.2',
+            'amountUomId':'PERCENT',
+            'rateAmountOff':'1.0',
+            'rateTypeParentId':'REDEEM'
+        }]
+
+        }
+}
+}
+};
+var FUND_PRODUCT_SAVE = {
+
+};
+var FUND_PRODUCT_UPDATE = {
+
+};
+var FUND_PRODUCT_DEL = {
+
+};

@@ -1,0 +1,13 @@
+<div class="wizard wizard-default">
+    <i class="glyphicon glyphicon-chevron-left" ng-if="control" ng-click="leftFn($event)"></i>
+    <div class="wizard-wrap" ng-style="wrapStyle">
+        <ul class="wizard-inner" ng-style="innerStyle">
+            <li class="wizard-item wizard-item-default" ui-sref='{{item.state}}' ng-class='{"is-active": item.isActive}' ng-repeat='item in items'>
+                {{item.title}}
+                <a class='fa fa-times' ng-if='item.title != "工作台"' ng-click='closeTab($index)'></a>
+            </li>
+        </ul>
+    </div>
+    <i class="glyphicon glyphicon-chevron-right" ng-if="control" ng-click="rightFn($event)"></i>
+</div>
+<div class="clearfix"></div>

@@ -1,0 +1,120 @@
+<div class="transactiontypeModal">
+    <form name="ngForm">
+        <cfo-panel panel-options="vm.panelBanseInfoOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <div class="form-horizontal" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.model"></div>
+            </panel-body>
+        </cfo-panel>
+        <cfo-panel panel-options="vm.panelPayMethodInfoOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <section class="pm-box">
+                    <div class="pmtransfer-row row">
+                        <!--左-->
+                        <div class="pmtransfer col-md-3 col-xs-3 col-sm-3">
+                            <div class="pmtransfer-header">
+                                <span class="pmtransfer-header-selected">
+                                <span>共{{vm.dataSource.length}}</span>
+                                </span>
+                                <span class="fr">
+                                种源支付方式
+                            </span>
+                            </div>
+                            <div class="pmtransfer-body">
+                                <ul class="pmtransfer-content">
+                                    <li class="pmtransfer-item" ng-repeat="source in vm.dataSource" ng-click="vm.onSelectSource(source);" ng-class="{'item-selected':source.payMethodId===vm.currentSelectSource.id}">
+                                        <label for="" class="pm-check-wrapper">
+                                            <input type="checkbox" ng-disabled="source.disabled" ng-model="source.check">
+                                            <span>{{source.payMethodName}}</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--按钮-->
+                        <div class="pmtransfer-btn">
+                            <button class="btn btn-sm btn-primary" ng-click="vm.addChannelSource();" ng-disabled="!vm.isFirst">
+                                <i class="fa fa-angle-right"></i>
+                            </button>
+                        </div>
+                        <div class="pmtransfer col-md-2 col-xs-2 col-sm-2">
+                            <div class="pmtransfer-header">
+                                <span ng-if="!vm.channelTip">{{vm.currentSelectSource.channelArr.length}}/{{vm.channelArr.length}} 支付渠道</span>
+                                <span ng-if="vm.channelTip" class="pmtransfer-title">{{vm.channelTip}}</span>
+                            </div>
+                            <div class="pmtransfer-body">
+                                <ul class="pmtransfer-ul">
+                                    <li class="pmtransfer-item" ng-repeat="channel in vm.channelArr">
+                                        <label>
+                                            <input type="checkbox" ng-click="vm.addChannelItem(channel);" ng-model="channel.checkbox" ng-disabled="!vm.isFirst" />
+                                            <span class="pmtransfer-title">{{channel.name}}</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--中-->
+                        <div class="pmtransfer-btn">
+                            <button class="btn btn-sm btn-primary" ng-disabled="!vm.isFirst || !vm.currentSelectSource.channelArr.length || !vm.isSecond" ng-click="vm.addToTarget();">
+                                <i class="fa fa-angle-right"></i>
+                            </button>
+                        </div>
+                        <div class="pmtransfer main">
+                            <div class="pmtransfer-header">
+                                <span class="pmtransfer-title">
+                                端支付方式
+                            </span>
+                            </div>
+                            <div class="pmtransfer-body">
+                                <table class="table table-striped table-hover">
+                                    <tr class="row">
+                                        <td class="col-md-1 col-xs-1 col-sm-1">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td class="col-md-4 col-xs-4 col-sm-4">
+                                            名称
+                                        </td>
+                                        <td class="col-md-5 col-xs-5 col-sm-5">支付渠道</td>
+                                        <td class="col-md-5 col-xs-5 col-sm-5">操作</td>
+                                    </tr>
+                                    <tr class="row" ng-repeat="target in vm.dataTarget" ng-click="vm.onSelectTarget(target);" ng-class="{'item-selected':target.check}">
+                                        <td class="col-md-1 col-xs-1 col-sm-1">
+                                            <input type="checkbox" ng-model="target.check" />
+                                        </td>
+                                        <td class="col-md-4 col-xs-4 col-sm-4">
+                                            {{target.payMethodId | titleMapFilter:vm.payMethodMap}}
+                                        </td>
+                                        <td class="col-md-5 col-xs-5 col-sm-5">
+                                            <span ng-repeat="channelItem in target.channelArr">
+                                            {{channelItem.id | titleMapFilter:vm.channelArr}}
+                                        </span>
+                                        </td>
+                                        <td class="col-md-2 col-xs-2 col-sm-2">
+                                            <a href="javascript:;" ng-click="vm.removeTarget(target);">删除</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!--右-->
+                    </div>
+                </section>
+            </panel-body>
+        </cfo-panel>
+        <cfo-panel class="dotted-underline" panel-options="vm.panelBankInfoOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <div class="custom-table" loading="vm.gridOptions.data">
+                    <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+                </div>
+            </panel-body>
+        </cfo-panel>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+                <button class="btn btn-sm btn-confirm btn-margin-r" ng-click="vm.autoReceiveSure(ngForm)">确定</button>
+                <button class="btn btn-default btn-sm hidden-xs" ng-click="vm.dismissModal()">取消</button>
+            </div>
+        </div>
+    </form>
+</div>

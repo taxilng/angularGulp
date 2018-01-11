@@ -1,0 +1,97 @@
+<div class="bankinfoManage">
+<form name="ngForm" class="form-horizontal" novalidate>
+    <cfo-panel panel-options="vm.formPanelOptions">
+        <panel-title></panel-title>
+        <panel-body>
+            <!-- <div class="form-horizontal" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.model"></div> -->
+            <!--  上传图片 -->
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">银行名称</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" placeholder="请输入银行名称" ng-model="vm.model.bankName"
+  uib-typeahead="bank.partyName for bank in vm.bankList | filter:{partyName:$viewValue} | limitTo:8" required maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">银行行号</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.bankId" readonly required>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">卡种</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" ui-select2="$root.select2Options"  ng-model="vm.model.cardType"    ng-options="item.value as item.name for item in vm.cardtypeList"  ></select>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">单笔限额</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.singleLimit" required amount maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">单日限额</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.singleDayMoneyLimit" required amount maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">单日限次</label>
+                    <div class="col-sm-7">
+                        <input type="number"  min="0" max="99999999" class="form-control" ng-model="vm.model.singleDayTradeCountLimit" required ng-blur="vm.deleteSpecial($event,'supplyScale');">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">单月限额</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" ng-model="vm.model.singleMonthMoneyLimit" amount  required maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="col-sm-4 control-label">单月限次</label>
+                    <div class="col-sm-7">
+                        <input type="number" min="0" max="99999999" class="form-control" ng-model="vm.model.singleMonthTradeLimit" required >
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-lg-12 col-sm-12">
+
+                        <label class="col-sm-2 control-label">备注</label>
+                        <div class="col-md-9 col-lg-9 col-sm-9">
+                            <textarea  class="form-control" ng-model="vm.model.description"></textarea>
+                        </div>
+
+                </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 form-group vertical-center" align="right"`>
+                    <label class="control-label col-md-2 col-lg-2 label-line-height">图片预览</label>
+                     <div class="col-md-1">
+                        <img ng-src="{{vm.model.upimageSrc}}" class="upload-preview" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 form-group vertical-center" align="right">
+                    <label class="control-label col-md-2 col-lg-2 label-line-height">银行Icon</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" readonly="true" ng-model="vm.fileName" required>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default btn-sm btn-margin">
+                            <input id="uploadImg" name="uploadImg" class="import-input" type="file" file-modal="myFile" ngf-select="vm.uploadCaseFile($files)"/>上传
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </panel-body>
+    </cfo-panel>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+            <button class="btn btn-confirm btn-sm look-for btn-margin-r" ng-click="vm.bankInfoRequest(ngForm)">确定</button>
+            <button class="btn btn-default btn-sm hidden-xs" ng-click="vm.dismissModal()">取消</button>
+        </div>
+    </div>
+    </form>
+</div>

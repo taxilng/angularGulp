@@ -1,0 +1,64 @@
+<div class="cfo-calendar">
+    <header class="mobile-header text-center">
+        <!--<img src="/assets/img/icon/mobile-icon-menu.png" alt="FinancialManager, inc" alt="">-->
+        <i class="glyphicon glyphicon-chevron-left" ui-sref="mobileHome"></i>
+        日历
+    </header>
+    <!-- <div class="calendar-month text-center">
+        <i class="glyphicon glyphicon-plus"></i>
+        <small>今天</small>
+        <big>{{today.solarMonth}}月</big>
+        <i class="glyphicon glyphicon-chevron-down"></i>
+        <i class="glyphicon glyphicon-option-horizontal"></i>
+    </div> -->
+    <div class="calendar-month text-center">
+        <i class="fa fa-angle-left fa-2x" ng-click="updateClendar(-1)"></i>
+        <big>{{calendarJson.dateArray[15].solarYear}}</big>
+        <small>{{month[calendarJson.dateArray[15].solarMonth-1]}}</small>
+        <i class="fa fa-angle-right fa-2x" ng-click="updateClendar(1)"></i>
+    </div>
+    <table class='calendar-table table'>
+        <thead>
+            <tr>
+                <td class='calendar-week' ng-repeat='week in weeks' ng-class="{'calendar-weekend': $index==0||$index==6}">
+                    {{week}}
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='line in range(0,calendarJson.lines-1)'>
+                <td ng-repeat='date in range($index*7,$index*7+6)'>
+                    <div class="calendar-day"
+                     ng-class="{'calendar-today':isToday(calendarJson.dateArray[date],today)}">
+                        <div class="calendar-solar-date" ng-class="{'calendar-weekend':isWeekend(calendarJson.dateArray[date])}">
+                            {{calendarJson.dateArray[date].solarDate}}
+                        </div>
+                        <div class="calendar-lunar-date" ng-class="{'calendar-weekend':isWeekend(calendarJson.dateArray[date])}">
+                            {{calendarJson.dateArray[date].showInLunar}}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr style="border-bottom:1px solid #ddd;">
+                <td class="todayValue" colspan="1">
+                    <b>{{today.solarDate}}</b>
+                </td>
+                <!-- <td class="clendar-icon" colspan="1">
+                    <i class="fa fa-calendar fa-2x"></i>
+                </td> -->
+                <td class="todayInfo text-left" colspan="6">
+                    <b class="red">今天</b>
+                    <span ng-bind="today.solarWeekDayInChinese"></span>
+                    <div class=""></div>
+                    {{today.shengxiao}}年{{today.lunarMonthInChinese}}月{{today.lunarDateInChinese}}
+                    <!-- <p>
+                        <var class="blue">宜</var>： <em>破屋</em>
+                    </p>
+                    <p>
+                        <var class="red">忌</var>： <em>行房</em>
+                    </p> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

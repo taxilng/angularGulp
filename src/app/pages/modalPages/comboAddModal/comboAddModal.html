@@ -1,0 +1,28 @@
+<div class="comboAddModal">
+    <cfo-panel panel-options="vm.formPanelOptions">
+        <panel-title>
+            <!-- <div ng-if="vm.title" class="panel-actions">
+                <span ng-bind="vm.title"></span>
+            </div> -->
+        </panel-title>
+        <panel-body>
+        </panel-body>
+    </cfo-panel>
+    <!--查询面板-->
+    <cfo-panel panel-options="vm.gridPanelOptions">
+        <panel-title>
+            <div ng-if="vm.title" class="panel-actions">
+                <span ng-bind="vm.title"></span>
+            </div>
+        </panel-title>
+        <panel-body>
+        </panel-body>
+    </cfo-panel>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+            <button class="btn btn-default btn-sm btn-margin-r btn-blue btn-reset" ng-click="vm.search({})">确定</button>
+            <button class="btn btn-default btn-sm btn-reset" ng-click="vm.clear()">重置</button>
+            <button class="btn btn-default btn-sm" ng-click="vm.advanceFinancialSearch(vm.financialSearchText.key)" ng-if="vm.prodType === 'financial'" ng-bind="vm.financialSearchText.text"></button>
+        </div>
+    </div>
+</div>

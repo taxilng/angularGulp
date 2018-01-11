@@ -1,0 +1,86 @@
+.cfo-calendar
+    width:100%;
+    .calendar-table
+        width:100%;
+    .mobile-header
+        display none
+    .calendar-month
+        position relative
+        border-bottom 1px solid $color-red-fifth
+        padding-bottom $mobile-font-size
+        font-size 25px
+        color red
+        .fa
+            color $color-red-fifth
+            font-size 45px
+        .fa-angle-left
+            position: absolute;
+            left: 13px;
+        .fa-angle-right
+            position: absolute;
+            right: 13px;
+        .glyphicon-plus
+            position absolute
+            left 5px
+            display block
+            padding 5px
+            border 1px dashed #999
+            color #666
+            corsor pointer
+            &:active
+                background #ccc
+        small
+            display inline-block
+            border 1px solid red
+            border-radius 13px
+            padding 2px 9px
+            margin-left 25px
+            font-size 13px
+            vertical-align text-top
+        .glyphicon-option-horizontal
+            position absolute
+            right 5px
+            display block
+            padding 5px
+            border 1px dashed #999
+            color #666
+            corsor pointer
+            &:active
+                background #ccc
+
+
+  .l-body
+      @media $smart
+        padding-top 0
+        .l-view
+            padding 0
+            border none
+            margin-top 0
+            height 100% !important
+            overflow auto
+        .cfo-calendar
+            height 100%
+            background #f3f5f8
+            color #353535
+            .mobile-header
+                position fixed
+                display block
+                top 0
+                color white
+                font-size $mobile-font-size
+                line-height $mobile-line-height
+                background red
+                display block
+                width 100%
+                z-index 999
+                .glyphicon
+                    position absolute
+                    line-height $mobile-line-height
+                    padding 0 $mobile-font-size
+                    left 0
+                    top 0
+        .calendar-month
+            margin-top $mobile-line-height
+            padding-top 15px
+            .glyphicon-plus,.glyphicon-option-horizontal,.fa-angle-left,.fa-angle-right
+                top 15px

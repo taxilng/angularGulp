@@ -1,0 +1,20 @@
+<div uib-accordion ng-class="{'panel-title-hide':!panelOptions.title}">
+    <uib-accordion-group is-disabled='isDisable' is-open="isOpen" class="panel {{panelOptions.panelClass}}">
+        <div ng-if="panelOptions.title">
+            <uib-accordion-heading>
+                <div class="panel-title">
+                    <div class="panel-left" ng-class="{'panel-hide':show}">
+                        <!-- <div ng-if="panelOptions.hasIcon==='true'" class="panel-img" ng-class="{{panelOptions.iconClass}}"></div> -->
+                        <i ng-if="panelOptions.hasIcon" class="iconfont" ng-class="panelOptions.iconClass"></i>
+                        <span class="paneltitle-line" ng-if="panelOptions.hasLine"></span>
+                        <strong ng-bind="panelOptions.title"></strong>
+                        <span class="panel-subtitle" ng-if="panelOptions.subtitle" ng-bind="panelOptions.subtitle"></span>
+                        <div class="panel-right" ng-transclude="title"></div>
+                        <i class="fa pull-right" ng-class="{'fa-chevron-down': isOpen, 'fa-chevron-up': !isOpen}" ng-if="!isDisable"></i>
+                    </div>
+                </div>
+            </uib-accordion-heading>
+        </div>
+        <div ng-transclude="body"></div>
+    </uib-accordion-group>
+</div>

@@ -1,0 +1,11 @@
+<div class="breadcrumb-wrapper" ng-show="!$root.hideTopMenu">
+    <ol class="breadcrumb">
+        <li ng-class="{'active':$index=== $root.menuNav.length-1}" ng-repeat="menu in $root.menuNav">
+            <span>
+            <!-- <a href="javascript:;" ng-bind="menu.prodMenuName" ui-sref="{{menu.prodMenuUrl}}"> -->
+            <a href="javascript:;" ng-bind="menu.prodMenuName">
+             </a>
+        </span>
+        </li>
+    </ol>
+</div>

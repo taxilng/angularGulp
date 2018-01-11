@@ -1,0 +1,76 @@
+.wizard
+    position: relative;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    .wizard-wrap
+        position: relative;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    .wizard-inner
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: all .35s ease-in-out;
+    .wizard-item
+        display: inline-block;
+        padding: 5px 30px;
+        position: relative;
+        margin-bottom:1px;
+        .fa
+            position:absolute;
+            right:10px;
+            top:7px;
+    .wizard-item-default
+        margin-top:1px;
+        padding-top:5px;
+        padding-bottom:3px;
+        margin-right:-1px;
+        &.is-active
+            padding-bottom:4px;
+    .glyphicon
+        position: absolute;
+        z-index: 3;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 17px;
+        line-height: 26px;
+        text-align: center;
+        background-color: #eee;
+        content: "1";
+        width: 35px;
+        transition-duration: .3s;
+        color: #777;
+        text-shadow: 1px 1px 0px #07526e;
+        vertical-align: baseline;
+        box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.3);
+        &:before
+            vertical-align: top;
+        &:hover
+            top: 1px;
+            transition-property: all;
+            background-color: #f6f6f6;
+            text-decoration: none;
+            outline: none;
+            color: #888;
+            box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.3);
+        &:active
+            top: 2px;
+            transition-property: all;
+            box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            background-color: #eeeeee;
+            border-color: #cfcfcf;
+            color: #999;
+    .glyphicon-chevron-left
+        left: 1px;
+    .glyphicon-chevron-right
+        right: 1px;
+    // .calc-width:
+    //     width: calc(100% - 38.5px * 2);
+    //     margin: 0 auto;

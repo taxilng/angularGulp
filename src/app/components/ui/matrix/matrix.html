@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="yaxis-title col-md-2">
+        <div class="yAxis-title" ng-repeat="a in yaxis">
+            财富产品占比{{a.title}}
+        </div>
+    </div>
+    <div class="matrix">
+        
+        <div ng-class="{'matrix-item matrix-item-primary':item.isTrue==false,'matrix-item matrix-item-warning':item.isTrue==true}"  ng-repeat="item in dataList" ng-click="itemClick(item)">
+            <div class="matrix-circle">{{item.index}}</div>
+            <div class="matrix-item-title">{{item.title}}</div>
+        </div>
+        <div class="xAxis-title" ng-repeat="b in xaxis">
+            {{b.title}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<cfo-panel panel-options="vm.formPanelOptions">
+    <panel-title>
+    </panel-title>
+    <panel-body>
+        <form class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></form>
+    </panel-body>
+</cfo-panel>
+<cfo-panel panel-options="vm.gridPanelOptions">
+    <panel-title>
+    </panel-title>
+    <panel-body>
+        <div class="row" loading="vm.gridOptions.data">
+            <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+        </div>
+        <cfo-pagination page="vm.page.startIndex" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.doCtrlPagingAct(page, pageSize, total)"></cfo-pagination>
+    </panel-body>
+</cfo-panel>

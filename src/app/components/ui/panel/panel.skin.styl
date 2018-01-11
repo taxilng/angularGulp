@@ -1,0 +1,25 @@
+.panel-border
+    border-radius: 0;
+    border:1px solid #eee;
+    // box-shadow: 1px 1px 1px 1px #dcdcdc;
+.panel
+    &::-webkit-scrollbar
+        width 6px
+        background-color #ffffff !important
+    &::-webkit-scrollbar-thumb
+        background-color $color-red-primary
+        border-radius 5px
+        &:hover
+            background-color $color-red-secondary
+        &:active
+            background-color $color-red-secondary
+    &::-webkit-scrollbar-track
+        border-radius 5px
+    .accordion-toggle
+        &:hover,&:focus
+            text-decoration:none;
+.panel-title-hide
+    .panel-heading
+        display:none;
+    .panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group
+        border-top:0;

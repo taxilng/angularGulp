@@ -1,0 +1,112 @@
+<div ng-if='form.hidden!=true' class="form-group schema-form-{{form.type}} {{form.htmlClass}}"
+    ng-class="{'has-error': form.disableErrorState !== true && hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess(), 'has-feedback': form.feedback !== false }">
+    <label class="control-label {{form.labelHtmlClass}}"
+        ng-class="{'sr-only': !showTitle()}"
+        for="{{form.key.slice(-1)[0]}}">{{form.title}}</label>
+    <div ng-if="!form.fieldAddonLeft && !form.fieldAddonRight && !form.fieldIconLeft && !form.fieldIconRight && !form.fieldButtonRight && !form.fieldButtonLeft" class="{{form.divClass}}">
+        <input
+            ng-show="form.key"
+            type="{{form.type}}"
+            min="{{form.min}}"
+            max="{{form.max}}"
+            maxlength="20"
+            step="any"
+            amount="form"
+            sf-changed="form"
+            placeholder="{{form.placeholder}}"
+            class="form-control {{form.fieldHtmlClass}}"
+            id="{{form.key.slice(-1)[0]}}"
+            ng-model-options="form.ngModelOptions"
+            ng-model="$$value$$"
+            ng-disabled="form.readonly"
+            schema-validate="form"
+            name="{{form.key.slice(-1)[0]}}"
+            aria-describedby="{{form.key.slice(-1)[0] + 'Status'}}">
+    </div>
+    <div ng-if="form.fieldButtonRight || form.fieldButtonLeft"
+        class="input-group {{form.divClass}}">
+        <div ng-if="form.fieldButtonLeft" class="input-group-btn">
+            <button type="button" class="btn {{form.buttonClass}}" ng-click="buttonClick($event, form)">{{form.buttonLabel}}</button>
+        </div>
+        <input ng-show="form.key"
+            type="{{form.type}}"
+            min="{{form.min}}"
+            maxlength="20"
+            max="{{form.max}}"
+            step="any"
+            amount="form"
+            sf-changed="form"
+            placeholder="{{form.placeholder}}"
+            class="form-control {{form.fieldHtmlClass}}"
+            id="{{form.key.slice(-1)[0]}}"
+            ng-model-options="form.ngModelOptions"
+            ng-model="$$value$$"
+            ng-disabled="form.readonly"
+            schema-validate="form"
+            name="{{form.key.slice(-1)[0]}}"
+            aria-describedby="{{form.key.slice(-1)[0] + 'Status'}}">
+        <div ng-if="form.fieldButtonRight" class="input-group-btn">
+            <button type="button" class="btn {{form.buttonClass}}" ng-click="buttonClick($event, form)">{{form.buttonLabel}}</button>
+        </div>
+    </div>
+    <div ng-if="form.fieldIconLeft || form.fieldIconRight"
+        class="input-icon {{form.divClass}}"
+        ng-class="'right': form.fieldIconRight">
+        <i style="color: #ccc; display: block; position: absolute; margin: 11px 2px 4px 10px; width: 16px; height: 16px; font-size: 16px; text-align: center;" class="fa {{form.iconClass}}"></i>
+        <input ng-show="form.key"
+            type="{{form.type}}"
+            min="{{form.min}}"
+            maxlength="16"
+            max="{{form.max}}"
+            step="any"
+            amount="form"
+            sf-changed="form"
+            placeholder="{{form.placeholder}}"
+            class="form-control {{form.fieldHtmlClass}}"
+            id="{{form.key.slice(-1)[0]}}"
+            ng-model-options="form.ngModelOptions"
+            ng-model="$$value$$"
+            ng-disabled="form.readonly"
+            schema-validate="form"
+            name="{{form.key.slice(-1)[0]}}"
+            aria-describedby="{{form.key.slice(-1)[0] + 'Status'}}">
+    </div>
+    <div ng-if="form.fieldAddonLeft || form.fieldAddonRight"
+        class="input-group {{form.divClass}}">
+        <span ng-if="form.fieldAddonLeft"
+            class="input-group-addon"
+            ng-bind-html="form.fieldAddonLeft">
+        </span>
+        <input ng-show="form.key"
+            type="{{form.type}}"
+            min="{{form.min}}"
+            maxlength="20"
+            max="{{form.max}}"
+            step="any"
+            amount="form"
+            sf-changed="form"
+            placeholder="{{form.placeholder}}"
+            class="form-control {{form.fieldHtmlClass}}"
+            id="{{form.key.slice(-1)[0]}}"
+            ng-model-options="form.ngModelOptions"
+            ng-model="$$value$$"
+            ng-disabled="form.readonly"
+            schema-validate="form"
+            name="{{form.key.slice(-1)[0]}}"
+            aria-describedby="{{form.key.slice(-1)[0] + 'Status'}}">
+        <span ng-if="form.fieldAddonRight"
+            class="input-group-addon"
+            ng-bind-html="form.fieldAddonRight">
+        </span>
+    </div>
+    <span ng-if="form.feedback !== false"
+        class="form-control-feedback"
+        ng-class="evalInScope(form.feedback) || {'glyphicon': true, 'glyphicon-ok': hasSuccess(), 'glyphicon-remove': hasError() }"
+        aria-hidden="true">
+    </span>
+    <span ng-if="hasError() || hasSuccess()"
+        id="{{form.key.slice(-1)[0] + 'Status'}}"
+        class="sr-only">{{ hasSuccess() ? '(success)' : '(error)' }}
+    </span>
+    <div class="help-block" sf-message="form.description"></div>
+</div>

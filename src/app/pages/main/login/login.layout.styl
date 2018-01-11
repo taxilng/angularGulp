@@ -1,0 +1,84 @@
+.login
+    position relative
+    width 100%
+    // background url('/assets/images/login/login_bg.png') center bottom no-repeat
+    // // height calc(100vh - 140px)
+    // background-size cover
+    @media $tablet
+        height 700px
+    @media $desktop
+        height 400px
+    @media $retina
+        height 500px
+    @media(min-width 1920px)
+        height 1080px
+.login-section
+    position relative
+    width 100%
+    height 100%
+    min-height 500px
+.login-form
+    position absolute
+    height 480px
+    width 450px
+    top calc((100% - 410px)/2)
+    left 50%
+    margin-left -225px
+.login-outer
+    position absolute
+    width 430px
+    background rgba(255,255,255,.4)
+    box-shadow 0 0 5px 0 rgba(0,0,0,.1)
+    border-radius 6px
+    .login-main
+        position relative
+        width calc(100% - 18px)
+        background-color rgba(255,255,255,.7)
+        margin 9px 0 0 9px
+        border-radius 6px
+        .login-title
+            margin 0
+            padding 40px 20px 26px
+            text-align center
+            font-size 18px
+            h4
+                font-size 24px
+                color #3B3B3B
+        .form-group
+            margin 0 0 24px 0
+        .input-group
+            width 100%
+        .form-control
+            font-size 14px
+            height 42px
+            margin-left 25px
+            width calc(100% - 50px)
+            padding-left 20px
+            border 1px solid #ccc
+            &::-ms-input-placeholder
+                color #333
+                font-weight normal
+            &::-webkit-input-placeholder
+                color #333
+                font-weight normal
+            &::-moz-placeholder
+                color #333
+                font-weight normal
+            &:focus
+                // border-color #e77600
+                // box-shadow 0 0 1px 1px rgba(228, 121, 17, .5)
+                border 1px solid $blue
+                box-shadow 0 0 1px 1px $blue
+        .loginBtn
+            margin 20px 0 0 25px
+            width calc(100% - 50px)
+            height 42px
+            border-radius 2px
+            font-size 16px
+            color #fff
+        .login-version
+            width 100%
+            color $color-blue-third
+            font-size 14px
+            text-align center
+            padding-bottom 46px

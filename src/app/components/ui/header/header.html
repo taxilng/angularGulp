@@ -1,0 +1,59 @@
+<div>
+    <!-- Logo -->
+    <a class="logo" ng-if="$root.userName">
+        <!-- <img src="/assets/images/AdminLTE/logo.png" alt=""> -->
+        <span class="logo-mini"></span>
+        <!-- <img src="/assets/images/AdminLTE/logo.png" alt=""> -->
+        <span class="logo-lg">后台管理系统</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" ng-show="$root.userName">
+        <!-- Sidebar toggle button-->
+        <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="input-group-btn  btn-user" uib-dropdown is-open="isopen">
+                    <a ng-if="!$root.hasLogin" ui-sref="login">
+                        <i class="iconfont icon-username"></i>
+                        <span>登录</span>
+                        <!-- <span class="ml-10">欢迎您，赵小开</span> -->
+                    </a>
+                    <a ng-if="$root.hasLogin" type="dropdown-toggle" uib-dropdown-toggle>
+                        <i class="iconfont icon-username"></i>
+                        <span class="ml-10">欢迎您,{{$root.userName}}</span>
+                        <!-- <span class="ml-10">欢迎您，赵小开</span> -->
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li role="menuitem">
+                            <a href="javascript:;">柜员编号:{{$root.employeeId}}</a>
+                            <a href="javascript:;">角色:{{$root.roleName}}</a>
+                            <a href="javascript:;">机构号:{{$root.orgSeriNo}}</a>
+                            <a href="javascript:;">机构名称:{{$root.orgName}}</a>
+                            <!-- <a href="javascript:;"><i class="fa fa-edit"></i>设置</a> -->
+                        </li>
+                    </ul>
+                </li>
+                <li class="input-group-btn  btn-logout">
+                    <a href="javascript:;" ng-click="userLogout()">
+                        <i class="iconfont icon-logout"></i>
+                        <span class="ml-10">登出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="login-header" ng-if="!$root.userName">
+        <div class="container">
+            <div class="loginheader-logo">
+                <img src="/assets/images/login/logo.png" />
+            </div>
+            <div class="loginheader-title">
+                <h3>金融门户管理系统</h3>
+            </div>
+        </div>
+    </div>
+</div>

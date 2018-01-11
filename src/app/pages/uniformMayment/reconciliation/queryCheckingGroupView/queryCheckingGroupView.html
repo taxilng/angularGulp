@@ -1,0 +1,60 @@
+<!--查询面板-->
+<cfo-panel panel-options="vm.formPanelOptions">
+     <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+    	<form  class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></form>
+    </panel-body>
+</cfo-panel>
+<!--返回结果-->
+<cfo-panel panel-options="vm.gridPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+        <div class="custom-table">
+            <table class="table table-striped">
+                    <tr>
+                        <th>序号</th>
+                        <th>交易流水</th>
+                        <th>金额</th>
+                        <th>交易状态</th>
+                        <th>对账</th>
+                        <th>处理方式</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat="item in vm.gridOptions">
+                        <td width="90">{{$index+1}}</td>
+                        <td ng-bind="item.transactionId"></td>
+                        <td ng-bind="item.amount"></td>
+                        <td ng-bind="item.transStatus"></td>
+                        <td ng-bind="item.statusId"> </td>
+                        <td>
+                            <select ng-if="item.statusId !== '已完成'" class="form-control chanel-table-select" ng-model="item.select">
+                                <option ng-repeat="(key, value) in item.adjustIdMap" value="{{key}}">{{value}}</option>
+                            </select>
+                        </td>
+                        <td ng-if="item.statusId !== '已完成'">
+                            <a class="opr-edit opr-leftbtn" ng-click="vm.handleSetInfo(item,item.select);">处理</a>
+                            <a class="opr-detail" ng-click="vm.detail(item);">查看</a>
+                        </td>
+                        <td ng-if="item.statusId === '已完成'">
+                            已处理
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <!--分页-->
+        <cfo-pagination page="vm.page.startIndex" page-size="vm.page.pageSize" total="vm.page.total" paging-action="vm.doCtrlPagingAct(page, pageSize, total)">
+        </cfo-pagination>
+    </panel-body>
+</cfo-panel>
+
+

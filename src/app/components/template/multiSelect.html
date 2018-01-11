@@ -1,0 +1,15 @@
+<form class="form-horizontal">
+    <div class="{{form.templateClass}}">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4">{{form.title}}</label>
+        <div class="col-lg-8 col-md-8 col-sm-8 {{form.selectClass}}"
+            isteven-multi-select
+            input-model="form.objectData"
+            output-model="form.outObjectData"
+            button-label="name"
+            item-label="name maker"
+            tick-property="ticked"
+            translation="form.localLang"
+            ng-model="$$value$$"
+        ></div>
+    </div>
+</form>

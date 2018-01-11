@@ -1,0 +1,10 @@
+<div class="{{form.divClass}}">
+    <div class="input-group input-large date-picker input-daterange" data-date="{{form.startDate}}" data-date-format="{{form.dateFormat}}">
+        <input type="text" class="form-control" uib-datepicker-popup="{{form.format}}" ng-model="$$value$$" is-open="form.opened" datepicker-options="form.dateOptions" close-text="关闭" clear-text="清空" current-text="今天"  alt-input-formats="form.altInputFormats" readonly="readonly" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="buttonClick($event, form)">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+    </div>
+</div>

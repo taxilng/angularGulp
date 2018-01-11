@@ -1,0 +1,20 @@
+<div class="paymentchanneldetailModal">
+    <div class="row detail-form">
+        <cfo-panel panel-options="vm.panelBanseInfoOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <form class="form-horizontal mlr-8" sf-schema="vm.schema" sf-form="vm.form" sf-model="vm.formModal"></form>
+            </panel-body>
+        </cfo-panel>
+    </div>
+    <div class="row detail-form">
+        <cfo-panel panel-options="vm.panelPayMethodInfoOptions">
+            <panel-title></panel-title>
+            <panel-body>
+                <div class="custom-table" loading="vm.gridOptions.data">
+                    <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+                </div>
+            </panel-body>
+        </cfo-panel>
+    </div>
+</div>

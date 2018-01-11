@@ -1,0 +1,39 @@
+<form name="ngForm">
+    <!--查询面板-->
+    <cfo-panel panel-options="vm.formPanelOptions">
+        <panel-title>
+            <div ng-if="vm.title" class="panel-actions">
+                <span ng-bind="vm.title"></span>
+                <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+            </div>
+        </panel-title>
+        <panel-body>
+            <div class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></div>
+        </panel-body>
+    </cfo-panel>
+</form>
+<!--返回结果-->
+<cfo-panel panel-options="vm.gridPanelOptions">
+    <panel-title>
+        <div ng-if="vm.title" class="panel-actions">
+            <span ng-bind="vm.title"></span>
+            <i class="fa fa-question-circle" aria-hidden="true" ng-click=""></i>
+        </div>
+    </panel-title>
+    <panel-body>
+        <form class="form-horizontal" sf-schema="vm.configschema" sf-model="vm.configmodel" sf-form="vm.configform"></form>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+                <button class="btn btn-sm btn-confirm btn-margin-r" ng-click="vm.addParametes(ngForm)">添加</button>
+                <button class="btn btn-default btn-sm hidden-xs" ng-click="vm.resetConfig()">重置</button>
+            </div>
+        </div>
+        <div class="grid" ui-grid="vm.gridOptions" ui-grid-selection></div>
+    </panel-body>
+</cfo-panel>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+        <button class="btn btn-sm btn-confirm btn-margin-r" ng-click="vm.manualJobsTask({},ngForm)">创建</button>
+        <button class="btn btn-default btn-sm hidden-xs" ng-click="vm.cancel()">取消</button>
+    </div>
+</div>

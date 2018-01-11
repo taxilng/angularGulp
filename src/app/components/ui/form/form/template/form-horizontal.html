@@ -1,0 +1,20 @@
+<form class="form-horizontal" name="{{option.formName}}">
+    <div class="row" ng-repeat="row in option.rows">
+        <div class="{{row.columnClass}}" ng-repeat="column in row.columns">
+            <div class="form-group">
+                <label class="{{column.label.className}}" ng-bind="column.label.text"></label>
+                <div class="{{column.item.itemClass}}">
+                    <input type="{{column.item.type}}"
+                     class="{{column.item.inputClass}}"
+                     placeholder="{{column.item.placeholder}}"
+                     name="{{column.item.name}}"
+                     ng-model="column[item.customName]" required minlength="8">
+                     {{vm}}
+                </div>
+                <div class="{{column.valid.className}}" ng-messages="vm.loginForm.txt_name.$error">
+                    <span class="help-block" ng-repeat="item in column.valid.items" ng-message="{{item.key}}" ng-bind="item.value"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

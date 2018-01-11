@@ -1,0 +1,11 @@
+  "main": [
+      "plugins/iCheck/all.css",
+      "plugins/iCheck/icheck.js",
+     // "plugins/input-mask/jquery.inputmask.js",
+      "plugins/datepicker/datepicker3.css",
+      "plugins/daterangepicker/daterangepicker-bs3.css",
+      "plugins/daterangepicker/daterangepicker.js",
+      "dist/css/AdminLTE.css",
+      "dist/css/skins/_all-skins.css",
+      "dist/js/app.js"
+    ],

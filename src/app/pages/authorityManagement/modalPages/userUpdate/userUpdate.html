@@ -1,0 +1,21 @@
+<div class="userUpdate">
+    <form name="ngForm">
+    <cfo-panel panel-options="vm.formPanelOptions">
+        <panel-title>
+            <div ng-if="vm.title" class="panel-actions">
+                <span ng-bind="vm.title"></span>
+            </div>
+        </panel-title>
+        <panel-body>
+	    	<div class="form-horizontal" sf-schema="vm.schema" sf-model="vm.model" sf-form="vm.form"></div>
+	    </panel-body>
+    </cfo-panel>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
+            <button class="btn btn-default btn-sm btn-margin-r btn-blue btn-reset" ng-click="vm.submitUserInfo({},ngForm)">确定</button>
+            <button class="btn btn-default btn-sm btn-reset" ng-click="vm.cancel()">取消</button>
+        </div>
+    </div>
+    </form>
+</div>

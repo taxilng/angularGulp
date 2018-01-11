@@ -1,0 +1,23 @@
+<div class="m-date-range">
+    <div class="clearfix col-lg-9 col-md-9 col-sm-9">
+        <div class="input-group col-md-5 col-sm-5 col-xs-5 pull-left">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="min" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="popup1.opened = true;">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+        </div>
+        <div class="pull-left and">
+            <span>至</span>
+        </div>
+        <div class="input-group col-md-5 col-sm-5 col-xs-5 pull-left">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="max" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="popup2.opened = true;">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+        </div>
+    </div>
+</div>

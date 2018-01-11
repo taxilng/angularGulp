@@ -1,0 +1,30 @@
+// .menu-bar
+//     .md-menu
+//         padding:0 10px 0 10px;
+.mobile-footer-menu
+    display:none;
+    @media $smart
+        display block
+        position fixed
+        bottom 0
+        height 65px
+        background #626262
+        width 100%
+        color white
+        text-align center
+        li
+            position relative
+            float left
+            width 25%
+            overflow hidden
+            opacity .5
+            &.active
+                opacity 1
+        .glyphicon, .fa
+            font-size $mobile-font-size
+            line-height 55px
+        .item-title
+            position absolute
+            bottom -5px
+            width 100%
+            text-align center
